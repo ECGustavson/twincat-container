@@ -22,8 +22,8 @@ COPY ./apt-config/bhf.list ./apt-config/debian.sources.list /etc/apt/sources.lis
 RUN --mount=type=secret,id=apt \
     apt-get -o "Dir::Etc::netrc=/run/secrets/apt" update \
     && apt-get -o "Dir::Etc::netrc=/run/secrets/apt" install --yes \
-    tc31-xar-um \
-    adstool \
+    tc31-xar-um=4026.28.39-1  \
+    adstool=113.0.35-1 \
     && rm -rf /var/lib/apt/lists/*
 
 # As an example, copy basic TwinCAT runtime configurations files
